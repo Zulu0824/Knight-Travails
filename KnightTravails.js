@@ -15,10 +15,10 @@ export function getMoves([x, y]) {
     .filter(([nx, ny]) => nx >= 0 && nx < 8 && ny >= 0 && ny < 8);
 }
 
-function knightMoves(start, end) {
+export function knightMoves(start, end) {
   if (start.toString() === end.toString) {
     console.log("Knight is in the same place");
-    return;
+    return [start];
   }
 
   const queue = [[start]];
@@ -27,7 +27,7 @@ function knightMoves(start, end) {
     const path = queue.shift();
     const current = path[path.length - 1];
 
-    if (current[0] === end[0] && current[1] === current[1]) {
+    if (current[0] === end[0] && current[1] === end[1]) {
       console.log(`You made it in ${path.length - 1} moves! Here's your Path:`);
       path.forEach((square) => console.log(`[${square[0]}, ${square[1]}]`));
       return path;
@@ -36,7 +36,7 @@ function knightMoves(start, end) {
     const moves = getMoves(current);
     for (const move of moves) {
       if (!visited.includes(move.toString())) {
-        visited.push(move.toString);
+        visited.push(move.toString());
         queue.push([...path, move]);
       }
     }
