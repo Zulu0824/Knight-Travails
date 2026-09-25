@@ -1,0 +1,34 @@
+{
+  "name": "knight-travails",
+  "version": "1.0.0",
+  "description": "",
+  "main": "KnightTravails.js",
+  "scripts": {
+    "test": "jest",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zulu0824/Knight-Travails.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Zulu0824/Knight-Travails/issues"
+  },
+  "homepage": "https://github.com/Zulu0824/Knight-Travails#readme",
+  "devDependencies": {
+    "@babel/core": "^8.0.6",
+    "@babel/preset-env": "^8.0.6",
+    "babel-loader": "^10.1.1",
+    "jest": "^30.5.2",
+    "webpack": "^5.111.1",
+    "webpack-cli": "^7.2.3"
+  },
+  "allowScripts": {
+    "@parcel/watcher@2.6.0": true,
+    "unrs-resolver@1.12.2": true
+  }
+}
