@@ -1,4 +1,5 @@
-import { knightMoves } from "./knightTravails";
+import { knightMoves } from "./KnightTravails.js";
+import { getMoves } from "./KnightTravails.js";
 
 describe("knightMoves", () => {
   test("returns a path that starts at the start square", () => {
@@ -17,7 +18,6 @@ describe("knightMoves", () => {
   });
 
   test("finds the known shortest path length from corner to corner", () => {
-    // [0,0] to [7,7] is a well-known 6-move case
     const path = knightMoves([0, 0], [7, 7]);
     expect(path.length - 1).toBe(6);
   });
@@ -37,4 +37,12 @@ describe("knightMoves", () => {
     const path = knightMoves([4, 4], [4, 4]);
     expect(path).toEqual([[4, 4]]);
   });
+});
+
+test("returns the exact path for a one-move case (single shortest path)", () => {
+  const path = knightMoves([0, 0], [1, 2]);
+  expect(path).toEqual([
+    [0, 0],
+    [1, 2],
+  ]);
 });
